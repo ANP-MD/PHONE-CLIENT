@@ -1,2 +1,2 @@
-1.0.0
-https://github.com/ANP-MD/PHONE-CLIENT/releases/download/1.0.0/PhoneClientInstaller.exe
+1.0.1
+https://github.com/ANP-MD/PHONE-CLIENT/releases/download/1.0.1/PhoneClientInstaller.exe

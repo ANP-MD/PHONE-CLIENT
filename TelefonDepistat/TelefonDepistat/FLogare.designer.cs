@@ -143,7 +143,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FLogare";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PhoneClient V1.0.0 (Cloud) - Made by Cat";
+            this.Text = "PhoneClient V1.0.1 (Cloud) - Made by Cat";
             this.ResumeLayout(false);
             this.PerformLayout();
 

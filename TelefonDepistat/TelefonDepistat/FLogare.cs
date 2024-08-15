@@ -1,13 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace TelefonDepistat
@@ -18,15 +16,19 @@ namespace TelefonDepistat
         private ConnectorBD cbd;
 
         //update module
-        private static readonly string client_version = "1.0.0";
+        private static readonly string client_version = "1.0.1";
         public static readonly string versionUrl = "https://raw.githubusercontent.com/ANP-MD/PHONE-CLIENT/main/version.txt";
         public static readonly string update = @"C:\PrisonPhone\update.exe";
         public static readonly string updateFlag = @"C:\PrisonPhone\update.txt";
 
         private void CheckUpdate(string version)
         {
-            try
+
+            if (!Directory.Exists("C:\\PrisonPhone"))
             {
+                Directory.CreateDirectory("C:\\PrisonPhone");
+            }   
+                
                 var metadata = new List<string>();
                 using (WebClient client = new WebClient())
                 {
@@ -63,12 +65,8 @@ namespace TelefonDepistat
                         File.Delete(update);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions (e.g., logging)
-                errorLabel.Text = $"Update Error: {ex.Message}";
-            }
+            
+         
         }
 
 
